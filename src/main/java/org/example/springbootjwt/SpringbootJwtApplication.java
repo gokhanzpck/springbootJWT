@@ -1,0 +1,19 @@
+package org.example.springbootjwt;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@ComponentScan(basePackages = {"org.example"})
+@EntityScan(basePackages = {"org.example"})
+@EnableJpaRepositories(basePackages = "org.example")
+@SpringBootApplication
+public class SpringbootJwtApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootJwtApplication.class, args);
+    }
+
+}
