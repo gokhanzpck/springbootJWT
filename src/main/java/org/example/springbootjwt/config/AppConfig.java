@@ -32,7 +32,8 @@ public class AppConfig {
                 if (optional.isPresent()){
                     return  optional.get();
                 }
-                return null;
+                return userRepository.findByUsername(username)
+                        .orElseThrow(() -> new UsernameNotFoundException("Kullanıcı bulunamadı: " + username));
 
             }
         };

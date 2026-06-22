@@ -26,7 +26,9 @@ public class securityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http){
-       http.authorizeHttpRequests(request-> request.requestMatchers(AUTHENTICATE,REGISTER)
+       http
+               .csrf(csrf -> csrf.disable())
+               . authorizeHttpRequests(request-> request.requestMatchers(AUTHENTICATE,REGISTER)
                .permitAll().anyRequest().authenticated())
                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                .authenticationProvider(authenticationProvider)
