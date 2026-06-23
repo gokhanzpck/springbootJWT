@@ -17,3 +17,14 @@ public class SpringbootJwtApplication {
     }
 
 }
+/*register
+→ kullanıcı oluşturur
+
+/authenticate
+→ kullanıcı adı/şifre kontrol eder
+→ token üretir
+
+diğer endpoint
+→ Authorization: Bearer token gönderilir
+→ filter tokenı kontrol eder
+→ kullanıcı giriş yapmış kabul edilir*/
